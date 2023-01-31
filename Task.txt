@@ -1,0 +1,17 @@
+1. How does neural network extract complex features automatically?
+
+2. Train a four layer (one input layer, one output layer, two hidden layers) neural network using keras with some random number of neurons in the hidden layers on your dataset and use the test dataset to evaluate the model's performance (accuracy, sensitivity, specificity, confusion matrix). Use the logistic activation functions for the hidden layers, and softmax for the output layer. Compare the results with that of the Logistic Regression model you for Milestone 1.
+
+3. Train the same model again, but now use one of the technique you mentioned to deal with unbalanced dataset. How does the performance metrics change? Explain
+
+4. What are the hyper-parameters for a neural network model? What segment of the dataset is used to find these hyper-parameters (train/test/valid)? 
+
+5. If your dataset is missing one of these segments, you need to create one by randomly splitting the train dataset. REMEMBER to set stratify=y in the train_test_split function. What does this parameter do?
+
+6. Use the keras-tuner library to find the optimal neural network hyperparameters for this model. Use BayesianOptimization tuner instead of RandomSearch tuner with  max_trials=300. Train each model for >= 100 epochs  Use the "fixed" dataset generated in step 3. Use the following search space for the hyper-parameters:
+1. Number of hidden layers: hp.Int between 2 to 5
+2. Neurons in each hidden layer: hp.Int between 16 to 128 with a step size of 16
+3. Activation function of the hidden layers: hp.Choice between relu and sigmoid.
+
+REMEMBER to use the validation set to tune the hyper-parameters, and the test set to report the final result. DO NOT use the test set to set any hyper parameter. 
+Compare the results with previous ones.
